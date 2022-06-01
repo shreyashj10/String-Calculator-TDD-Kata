@@ -28,5 +28,22 @@ class StringCalculatorTest {
     public void testAddForNewLine(){
     	Assert.assertEquals(6, sCalculator.add("1\n2,3"));
     }
+	
+	@Test
+    public void testAddForNegativeNumber(){
+    	try {
+    		sCalculator.add("-1,2");
+		}
+		catch (IllegalArgumentException e){
+			assertEquals(e.getMessage(), "Negatives not allowed: -1");
+		}
+
+		try {
+			sCalculator.add("2,-4,3,-5");
+		}
+		catch (IllegalArgumentException e){
+			assertEquals(e.getMessage(), "Negatives not allowed: -4,-5");
+		}
+    }
 
 }
