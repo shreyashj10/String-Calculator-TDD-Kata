@@ -24,5 +24,9 @@ class StringCalculatorTest {
 	void testAddForMultipleNumbers() {
 		Assert.assertEquals(10, sCalculator.add("1,2,3,4"));
 	}
+	@Test
+    public void testAddForNewLine(){
+    	Assert.assertEquals(6, sCalculator.add("1\n2,3"));
+    }
 
 }
