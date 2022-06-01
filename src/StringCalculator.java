@@ -14,7 +14,10 @@ public class StringCalculator {
 		        			negativeString = number;
 		        		else
 		        			negativeString += ("," + number);
-				  }  
+				  }
+				  if(Integer.parseInt(number)<1000 & Integer.parseInt(number)>0) {
+					  total += Integer.parseInt(number);
+				  }
 			  }
 			  if(!negativeString.equals("")){
 				  throw new IllegalArgumentException("Negatives not allowed: " + negativeString);

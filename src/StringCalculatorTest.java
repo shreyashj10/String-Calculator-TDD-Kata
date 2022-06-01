@@ -31,19 +31,24 @@ class StringCalculatorTest {
 	
 	@Test
     public void testAddForNegativeNumber(){
-    	try {
+    	try{
     		sCalculator.add("-1,2");
 		}
 		catch (IllegalArgumentException e){
 			assertEquals(e.getMessage(), "Negatives not allowed: -1");
 		}
 
-		try {
+		try{
 			sCalculator.add("2,-4,3,-5");
 		}
 		catch (IllegalArgumentException e){
 			assertEquals(e.getMessage(), "Negatives not allowed: -4,-5");
 		}
+    }
+	
+	@Test
+    public void testOverThousand(){
+    	assertEquals(2, sCalculator.add("1000,2"));
     }
 
 }
