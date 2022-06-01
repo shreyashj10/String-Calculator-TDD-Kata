@@ -4,8 +4,13 @@ public class StringCalculator {
 		  if(test.equals("")) {
 			  return 0;
 		  }
-		  else if(test.contains(",")) {
-			  String[] numbers=test.split(",|\n");
+		  else if(test.length()>1){
+			  String delimiter=",";
+			  if(test.matches("//(.*)\n(.*)")){
+				  delimiter=Character.toString(test.charAt(2));
+				  test=test.substring(4);
+			  }
+			  String[] numbers=test.split(delimiter+"|\n");
 			  int total = 0;
 			  String negativeString = "";
 			  for(String number : numbers){
