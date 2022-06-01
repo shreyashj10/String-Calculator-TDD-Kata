@@ -6,7 +6,11 @@ public class StringCalculator {
 		  }
 		  else if(test.contains(",")) {
 			  String[] numbers=test.split(",");
-			  return Integer.parseInt(numbers[0])+Integer.parseInt(numbers[1]);
+			  int total = 0;
+			  for(String number : numbers){
+			    total += Integer.parseInt(number);
+			  }
+			  return total;
 		  }
 		  else {
 			  return Integer.parseInt(test);

@@ -19,5 +19,10 @@ class StringCalculatorTest {
 	void testAddForTwoNumbers() {
 		Assert.assertEquals(3, sCalculator.add("1,2"));
 	}
+	
+	@Test
+	void testAddForMultipleNumbers() {
+		Assert.assertEquals(10, sCalculator.add("1,2,3,4"));
+	}
 
 }
